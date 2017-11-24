@@ -1,0 +1,9 @@
+SGE/sge
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
+.ninja_log
+.ninja_deps
+Makefile
+rules.ninja
