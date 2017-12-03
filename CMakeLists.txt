@@ -1,12 +1,11 @@
 cmake_minimum_required (VERSION 3.6)
 project (SGE)
 
-#output dirs
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SGE)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SGE)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SGE)
 
-#Compilers
+
 if (CMAKE_COMPILER_IS_GNUCC)
   option(ENABLE_COVERAGE "Enable coverage reporting for gcc/clang" FALSE)
 
@@ -15,12 +14,13 @@ if (CMAKE_COMPILER_IS_GNUCC)
   endif()
 endif()
 
-#Enable all warnings
 if (MSVC)
   add_compile_options(/W4)
 else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-#sources
-add_subdirectory (src)
+
+include_directories("./src")
+file(GLOB SOURCE "../src/**")
+add_executable(SGE main.cpp ${SOURCE})
