@@ -1,4 +1,5 @@
-SGE/sge
+SGE/SGE
+tests/TestSGE/TestSGE
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
@@ -7,3 +8,5 @@ build.ninja
 .ninja_deps
 Makefile
 rules.ninja
+*.pc
+*.gch
