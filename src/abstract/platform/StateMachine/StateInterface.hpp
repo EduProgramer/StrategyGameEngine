@@ -11,7 +11,8 @@ namespace platform
 {
     namespace State
     {
-        struct StateInterface    // TODO concretion
+        // TODO concretion
+        struct StateInterface
         {
         };
     }    // namespace State

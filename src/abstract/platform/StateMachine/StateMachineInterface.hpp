@@ -11,7 +11,8 @@ namespace platform
 {
     namespace StateMachine
     {
-        struct StateMachineInterface    // TODO concretion
+        // TODO concretion
+        struct StateMachineInterface
         {
         };
     }    // namespace StateMachine

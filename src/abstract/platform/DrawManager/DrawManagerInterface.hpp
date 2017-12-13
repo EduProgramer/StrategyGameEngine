@@ -15,11 +15,12 @@ namespace platform
 {
     namespace DrawManager
     {
-        struct DrawManagerInterface    // TODO concretion
+        // TODO concretion
+        struct DrawManagerInterface
         {
             using DrawableVector =
                 std::vector< std::unique_ptr< DrawableInterface > >;
-            void DrawVector( DrawableVector vec );
+            virtual void DrawVector( DrawableVector vec ) = 0;
         };
     }    // namespace DrawManager
 }    // namespace platform

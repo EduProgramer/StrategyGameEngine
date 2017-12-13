@@ -11,10 +11,13 @@ namespace platform
 {
     namespace SoundBox
     {
-        struct SoundBoxInterface    // TODO concretion
+        // TODO concretion
+        struct SoundBoxInterface
         {
-            void playSound();    // TODO args
-            void playTheme();    // TODO args, rethink
+            // TODO args
+            void playSound();
+            // TODO args, rethink
+            void playTheme();
         };
     }    // namespace SoundBox
 }    // namespace platform

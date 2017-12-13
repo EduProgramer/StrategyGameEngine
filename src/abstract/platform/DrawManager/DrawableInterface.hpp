@@ -11,9 +11,10 @@ namespace platform
 {
     namespace DrawManager
     {
-        struct DrawableInterface    // TODO concretion
+        // TODO concretion
+        struct DrawableInterface
         {
-            void draw();
+            virtual void draw() = 0;
         };
     }    // namespace DrawManager
 

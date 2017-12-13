@@ -11,10 +11,13 @@ namespace platform
 {
     namespace EventsManager
     {
-        struct EventsManagerInterface    // TODO concretion
+        // TODO concretion
+        struct EventsManagerInterface
         {
-            void poll();
-            void addObserver();    // TODO args observer, Event, function ptr?
+            virtual void poll() = 0;
+
+            // TODO args observer, Event, function ptr?
+            virtual void addObserver() = 0;
         };
     }    // namespace EventsManager
 }    // namespace platform

@@ -11,7 +11,7 @@ namespace module
 {
     struct ModuleInterface
     {
-        void start();
-        void pause();
+        virtual void start() = 0;
+        virtual void pause() = 0;
     };
 }    // namespace module

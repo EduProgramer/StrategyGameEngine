@@ -9,7 +9,8 @@
 
 namespace platform
 {
-    struct WindowInterface    // TODO concretion
+    // TODO concretion
+    struct WindowInterface
     {
     };
 }    // namespace platform
