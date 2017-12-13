@@ -10,3 +10,4 @@ Makefile
 rules.ninja
 *.pc
 *.gch
+*.o
