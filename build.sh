@@ -8,5 +8,6 @@
 # @License: MIT License
 # @Copyright: Copyright (c) 2017
 
+rm SGE/SGE
 cmake . -G Ninja
 ninja

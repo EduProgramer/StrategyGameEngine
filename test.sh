@@ -6,6 +6,6 @@
 # @License: MIT License
 # @Copyright: Copyright (c) 2017
 
-cd ./tests
-../build.sh
-./TestSGE/TestSGE
+#cd ./tests
+#../build.sh
+#./TestSGE/TestSGE
