@@ -6,8 +6,10 @@
  */
 
 #include "TestGameModule.hpp"
-
-namespace module
+namespace tests
 {
-    // TODO Tests for Game Module
-}
+    namespace module
+    {
+        // TODO Tests for Game Module
+    }
+}    // namespace tests

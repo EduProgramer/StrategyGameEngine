@@ -9,9 +9,13 @@
 
 #include "GameModule.hpp"
 
-namespace module
+
+namespace tests
 {
-    struct TestGameModule
+    namespace module
     {
-    };
-}    // namespace module
+        struct TestGameModule
+        {
+        };
+    }    // namespace module
+}    // namespace tests

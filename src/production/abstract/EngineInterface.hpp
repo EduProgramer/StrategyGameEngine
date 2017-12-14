@@ -5,9 +5,10 @@
  * @Copyright: Copyright (c) 2017
  */
 
-#include "TestGuiModule.hpp"
+#pragma once
 
-namespace module
+
+struct EngineInterface
 {
-    // TODO Tests for GUI Module
-}
+    virtual void run() = 0;
+};

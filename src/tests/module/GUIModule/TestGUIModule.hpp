@@ -9,9 +9,12 @@
 
 #include "GUIModule.hpp"
 
-namespace module
+namespace tests
 {
-    struct TestGUIModule
+    namespace module
     {
-    };
-}    // namespace module
+        struct TestGUIModule
+        {
+        };
+    }    // namespace module
+}    // namespace tests

@@ -8,15 +8,13 @@
  * @Copyright: Copyright (c) 2017
  */
 
-#include <iostream>
+#include "gtest/gtest.h"
 
-int main() try
+namespace tests
 {
-    std::cout << "hello world" << std::endl;
-    std::cout << std::endl;
-    return 0;
-}
-catch ( ... )
-{
-    /* error */
-}
+    int main( int argc, char** argv )
+    {
+        ::testing::InitGoogleTest( &argc, argv );
+        return RUN_ALL_TESTS();
+    }
+}    // namespace tests
