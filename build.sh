@@ -9,5 +9,23 @@
 # @Copyright: Copyright (c) 2017
 
 rm SGE/SGE
-cmake . -G Ninja
+
+case "$1" in
+        Release)
+            cmake . -G Ninja -DCMAKE_BUILD_TYPE=Release
+            ;;
+
+        Debug)
+            cmake . -G Ninja -DCMAKE_BUILD_TYPE=Debug
+            ;;
+
+        Test)
+            cmake . -G Ninja -DCMAKE_BUILD_TYPE=Test
+            ;;
+        *)
+            cmake . -G Ninja
+
+esac
+
 ninja
+stat --printf="%s" SGE/SGE
