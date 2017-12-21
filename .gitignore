@@ -11,3 +11,5 @@ rules.ninja
 *.pc
 *.gch
 *.o
+*.cbp
+*.layout
