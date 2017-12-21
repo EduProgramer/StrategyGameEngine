@@ -46,7 +46,7 @@ if(${CMAKE_BUILD_TYPE} STREQUAL "Test")
   file(GLOB_RECURSE SRCS "./src/*.cpp")
   file(GLOB_RECURSE HDRS "./src/*.hpp")
   # remove production main
-  list(REMOVE_ITEM SRCS "src/production/main.cpp")
+  list(REMOVE_ITEM SRCS "${CMAKE_CURRENT_SOURCE_DIR}/./src/production/main.cpp")
 else()
   # add production c++ files
   file(GLOB_RECURSE SRCS "./src/production/*.cpp")
