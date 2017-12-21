@@ -10,13 +10,20 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SGE)
 
 #TODO compilation with profile
 #TODO add sanitizers to debug flags
+#TODO setup clang
 
 message( "Build type: ${CMAKE_BUILD_TYPE}")
 
 # Define standard compiler flags
 SET(GCC_STANDARD_FLAGS " -std=c++14 ")
 SET(GCC_WARRNINGS_FLAGS " -Wall -Werror -Wextra -Wshadow -Wunused -pedantic -pedantic-errors ")
-SET(GCC_DEBUG_FLAGS "${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -g -O0 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls ASAN_OPTIONS=check_initialization_order=1 ASAN_OPTIONS=detect_leaks=1")
+
+SET(GCC_DEBUG_FLAGS "${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -g -O0
+-fsanitize=return -fsanitize=signed-integer-overflow -fsanitize=pointer-compare
+-fsanitize=bounds -fsanitize=thread -fsanitize=leak -fsanitize=address
+-fno-omit-frame-pointer -fno-optimize-sibling-calls ASAN_OPTIONS=check_initialization_order=1
+ASAN_OPTIONS=detect_leaks=1")
+
 SET(GCC_RELEASE_FLAGS "${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -O3")
 # TODO add test coverage
 SET(GCC_TEST_FLAGS "${GCC_DEBUG_FLAGS}")
