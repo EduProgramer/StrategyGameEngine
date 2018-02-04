@@ -80,14 +80,14 @@ set(TEST_INCLUDES ${GTEST_INCLUDE_DIRS}
 target_include_directories(SGE_Tests BEFORE PRIVATE ${INCLUDES} ${TEST_INCLUDES})
 
 # Define standard compiler flags
-SET(GCC_STANDARD_FLAGS " -std=c++14 ")
-SET(GCC_WARRNINGS_FLAGS " -Wall -Werror -Wextra -Wshadow -Wunused -pedantic -pedantic-errors ")
+SET(GCC_STANDARD_FLAGS  -std=c++14 )
+SET(GCC_WARRNINGS_FLAGS  -Wall -Werror -Wextra -Wshadow -Wunused -pedantic -pedantic-errors )
+# TODO add sanitizers flags -fsanitize=return -fsanitize=signed-integer-overflow -fsanitize=pointer-compare -fsanitize=bounds -fsanitize=thread -fsanitize=leak -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls ASAN_OPTIONS=check_initialization_order=1 ASAN_OPTIONS=detect_leaks=1
+SET(GCC_DEBUG_FLAGS ${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -g -O0 )
 
-SET(GCC_DEBUG_FLAGS "${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -g -O0 -fsanitize=return -fsanitize=signed-integer-overflow -fsanitize=pointer-compare -fsanitize=bounds -fsanitize=thread -fsanitize=leak -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls ASAN_OPTIONS=check_initialization_order=1 ASAN_OPTIONS=detect_leaks=1")
-
-SET(GCC_RELEASE_FLAGS "${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -O3")
+SET(GCC_RELEASE_FLAGS ${GCC_WARRNINGS_FLAGS} ${GCC_STANDARD_FLAGS} -O3)
 # TODO add test coverage
-SET(GCC_TEST_FLAGS "${GCC_DEBUG_FLAGS}")
+SET(GCC_TEST_FLAGS ${GCC_DEBUG_FLAGS})
 
 # Release
 target_compile_options(SGE_Release BEFORE PRIVATE ${GCC_RELEASE_FLAGS})
